@@ -75,7 +75,7 @@ const StayConnected = () => {
         >
             <span className="relative inline-block">
                 @Maedric
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#c8a951] origin-left transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[var(--accent)] origin-left transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
             </span>
         </Link>
     );

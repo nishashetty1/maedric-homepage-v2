@@ -18,19 +18,23 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({
   onItemClick,
   isMobile = false
 }) => {
+  // Create grid classes based on props
+  const gridColsClass = columns === 2 ? "grid-cols-2" : "grid-cols-3";
+  const gapClass = "gap-2";
+  
   return (
-    <div className={`grid grid-cols-${columns} gap-${isMobile ? '2' : '4'}`}>
+    <div className={`grid ${gridColsClass} ${gapClass}`}>
       {items.map((item) => (
         <div key={item.name} className="w-full">
           <Link href={item.href} onClick={onItemClick}>
             <div className={`border ${isMobile ? 'border-gray-200' : 'border-[var(--accent)]'} rounded-none overflow-hidden group relative`}>
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden max-h-[160px]">
                 <Image
                   src={item.image}
                   alt={item.name}
                   width={200}
                   height={200}
-                  className="w-full h-auto aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="p-2 flex justify-between items-center">

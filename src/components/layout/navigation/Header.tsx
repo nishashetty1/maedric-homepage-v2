@@ -90,8 +90,8 @@ const Header: React.FC<HeaderProps> = ({ links, dropdowns }) => {
         {/* TOP BAR - Only shown when not scrolled or on smaller screens */}
         <div
           className={`
-            w-full text-[var(--primary)] bg-[var(--background)]/40 bg-blur-md
-            border-b-[0.2px] border-[var(--default-border)]
+            w-full text-[var(--primary)] bg-[var(--background)]/70 bg-blur-lg
+            border-b-[0.2px] border-[var(--default)]
             transition-all duration-500 ease-in-out
             ${shouldApplyScrollEffect
               ? "h-0 opacity-0 overflow-hidden"
@@ -126,12 +126,12 @@ const Header: React.FC<HeaderProps> = ({ links, dropdowns }) => {
         {/* NAV LINKS ROW (sticky) */}
         <div
           className={`
-            bg-[var(--background)]/40 bg-blur-xs transition-all duration-500 ease-in-out
+            bg-[var(--background)]/70 bg-blur-lg transition-all duration-500 ease-in-out
             ${shouldApplyScrollEffect ? "py-3" : "py-1"}
           `}
         >
           <div
-            className={`container mx-auto px-4 flex transition-all duration-500 ease-in-out 
+            className={`container mx-auto px-4 flex transition-all duration-500 ease-in-out max-w-6xl 
               ${shouldApplyScrollEffect
                 ? "justify-between items-center"
                 : "justify-center"
@@ -195,7 +195,7 @@ const Header: React.FC<HeaderProps> = ({ links, dropdowns }) => {
                           transition-all duration-300 ease-in-out z-50
                         "
                         >
-                          <div className="bg-[var(--background)]/40 bg-blur-sm text-[var(--primary)] shadow-md py-2 px-4 w-48">
+                          <div className="bg-[var(--background)]/70 bg-blur-lg text-[var(--primary)] shadow-md py-2 px-4 w-48">
                             {dropdowns[link.label].map((item) => (
                               <Link
                                 key={item}

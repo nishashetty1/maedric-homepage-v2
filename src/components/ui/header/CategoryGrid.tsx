@@ -27,7 +27,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({
       {items.map((item) => (
         <div key={item.name} className="w-full">
           <Link href={item.href} onClick={onItemClick}>
-            <div className={`border ${isMobile ? 'border-gray-200' : 'border-[var(--accent)]'} rounded-none overflow-hidden group relative`}>
+            <div className={`border ${isMobile ? 'border-gray-200' : 'border-[var(--accent)]'} rounded-none overflow-hidden group relative pt-2 px-2`}>
               <div className="aspect-square overflow-hidden max-h-[160px]">
                 <Image
                   src={item.image}

@@ -33,7 +33,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ type, isVisible, onClose }) => {
           <div className="container max-w-4xl mx-auto py-6">
             <div className="flex flex-row">
               {/* Left section with image */}
-              <div className="w-2/5 relative h-[420px]">
+              <div className="w-2/5 relative h-[500px]">
                 <div className="h-full relative">
                   <Image
                     src={`/images/header/main/${type}.png`}

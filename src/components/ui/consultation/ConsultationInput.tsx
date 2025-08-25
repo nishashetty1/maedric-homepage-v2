@@ -31,8 +31,9 @@ const ConsultationInput: React.FC<ConsultationInputProps> = ({
           as="subheading"
           align="left"
           color="var(--consultationForm)"
+          className="mb-2"
         >
-          {label}
+          {label} {required && <span className="text-red-500">*</span>}
         </Typography>
       </label>
       <input
@@ -42,7 +43,7 @@ const ConsultationInput: React.FC<ConsultationInputProps> = ({
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full text-[var(--primary)] border-b-[3px] border-[var(--consultationForm)] pb-2 outline-none focus:border-[var(--consultationForm)] transition-colors"
+        className="w-full text-[var(--primary)] border-b border-[var(--consultationForm)] pb-2 outline-none focus:border-[var(--consultationForm)] focus:border-b-2 transition-colors"
       />
     </div>
   );

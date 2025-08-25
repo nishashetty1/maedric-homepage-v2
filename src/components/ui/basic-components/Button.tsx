@@ -30,14 +30,12 @@ const Button: React.FC<ButtonProps> = ({
   className = "",
   ...rest
 }) => {
-
   // Base styles shared by all button variants
   const baseClasses =
     "flex items-center justify-center text-center gap-[10px] whitespace-nowrap cursor-pointer relative overflow-hidden group";
 
   // Style variations based on variant prop
   const variantClasses: Record<ButtonVariant, string> = {
-    
     // Default variant (transparent with border)
     default:
       "border border-[var(--default)] text-[var(--default)] py-4 px-[105px] transition-all duration-300 ease-out hover:shadow-[0_0_10px_rgba(var(--primary-rgb),0.4)] before:absolute before:content-[''] before:bg-[var(--primary)] before:top-0 before:left-0 before:w-full before:h-full before:z-[-1] before:origin-left before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-300 before:ease-out hover:text-[var(--default)]",
@@ -64,9 +62,9 @@ const Button: React.FC<ButtonProps> = ({
 
     // Consultation form button variant
     consultation: active
-      ? "border border-[1px] border-solid border-[var(--consultationForm)] text-[var(--consultationForm)] bg-[var(--consultationFormHover)] font-bold py-[10px] px-2 gap-[8px] transition-all duration-200"
-      : "border border-[0.5px] border-solid border-opacity-30 border-[var(--consultationFormBorder)] text-[var(--consultationForm)] py-[10px] px-2 gap-[8px] transition-all duration-300 ease-out hover:bg-[var(--consultationFormHover)] hover:border-[var(--consultationForm)] hover:border-[1px] hover:border-solid hover:font-bold hover:scale-[1.02] hover:shadow-[0_0_8px_rgba(var(--consultationForm-rgb),0.2)]",
-  };
+    ? "border border-[var(--consultationForm)] border-2 text-white bg-[var(--consultationForm)] py-[10px] px-2 gap-[8px] font-medium relative z-0"
+    : "border border-[var(--consultationFormBorder)] text-[var(--consultationForm)] py-[10px] px-2 gap-[8px] font-normal relative z-0 transition-colors duration-300 ease-in-out hover:text-white hover:border-[var(--consultationForm)] hover:border-2 before:absolute before:content-[''] before:bg-[var(--consultationForm)] before:top-0 before:left-0 before:w-full before:h-full before:z-[-1] before:origin-top before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:duration-300 before:ease-out",
+};
 
   // Width classes based on props and responsive design
   const widthClasses = fullWidth
@@ -107,25 +105,23 @@ const Button: React.FC<ButtonProps> = ({
     >
       <span className="relative z-10">{children}</span>
       {isCTA && (
-  <svg
-    width="10"
-    height="6"
-    viewBox="0 0 10 6"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="transform rotate-90 ml-2 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
-  >
-    <path
-      d="M1 1L5 5L9 1"
-      stroke={
-        variant === "cta" ? "var(--default)" : "var(--secondary)"
-      }
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-)}
+        <svg
+          width="10"
+          height="6"
+          viewBox="0 0 10 6"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="transform rotate-90 ml-2 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+        >
+          <path
+            d="M1 1L5 5L9 1"
+            stroke={variant === "cta" ? "var(--default)" : "var(--secondary)"}
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      )}
     </button>
   );
 };

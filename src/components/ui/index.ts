@@ -19,9 +19,9 @@ import CollectionSlider from "../layout/sections/home/CollectionSlider";
 
 // Consultation Form
 import ConsultationInput from "./consultation/ConsultationInput";
-import ConsultationOptionButtons from "./consultation/ConsultationOptionButtons";
-import ConsultationRangeSlider from "./consultation/ConsultationRangeSlider";
 import ConsultationSelect from "./consultation/ConsultationSelect";
+import ConsultationCheckbox from "./consultation/ConsultationCheckbox";
+import ConsultationRadio from "./consultation/ConsultationRadio";
 
 // Footer
 import NewsletterOverlay from "./footer/NewsletterOverlay";
@@ -37,9 +37,9 @@ export { Card, Slider, CollectionSlider };
 
 export {
   ConsultationInput,
-  ConsultationOptionButtons,
-  ConsultationRangeSlider,
   ConsultationSelect,
+  ConsultationRadio,
+  ConsultationCheckbox,
 };
 
 export {
